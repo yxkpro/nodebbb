@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: freerider-forum
+    env: node
+    buildCommand: ./nodebb setup -d postgresql://nodebb:l9IbiwF0FXOSs2ltpJm9CLMKHSvpBSod@dpg-d4cdcoodl3ps73beaoeg-a:5432/nodebb_a0lz && ./nodebb build
+    startCommand: ./nodebb start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: postgresql://nodebb:l9IbiwF0FXOSs2ltpJm9CLMKHSvpBSod@dpg-d4cdcoodl3ps73beaoeg-a:5432/nodebb_a0lz
